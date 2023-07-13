@@ -13,41 +13,6 @@ client.on('ready', (member) => {
     console.log(`${member.user.tag} is online.`)
 })
 
-<<<<<<< HEAD
-=======
-// client.on("guildMemberAdd", (guild) => {
-//     // Registration works only for real people (not for bots)
-//     if (guild.user.bot === true) { return }
-
-//     const discordId = guild.user.id
-//     if (!functions.isConnectedUserInDB(discordId)) {
-//         // user hasn't registered yet
-//         const discordTag = guild.user.tag
-//         functions.registerNewUserInDB(discordId, discordTag)
-//     }
-// })
-
-// client.on('interactionCreate', async (interaction) => {
-//     if (!interaction.isChatInputCommand()) return;
-  
-//     if (interaction.commandName === 'login_info') {
-//         const message = await functions.getLoginInfoForUser(interaction.member.user.id)
-//         return interaction.reply({
-//             content: message,
-//             ephemeral: true
-//         });
-//     }
-  
-//     if (interaction.commandName === 'my_balance') {
-//         const message = await functions.getUserBalance(interaction.member.user.id)
-//         return interaction.reply({
-//             content: message,
-//             ephemeral: true
-//         });
-//     }
-//   });
-
->>>>>>> 3b43d544384c8134cd73e70a5db08a40794490b0
 const db = new botFunc()
 
 client.on("guildMemberAdd", async (guild) => {

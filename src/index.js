@@ -25,4 +25,24 @@ client.on("guildMemberAdd", (guild) => {
     }
 })
 
+client.on('interactionCreate', async (interaction) => {
+    if (!interaction.isChatInputCommand()) return;
+  
+    if (interaction.commandName === 'login_info') {
+        const message = await functions.getLoginInfoForUser(interaction.member.user.id)
+        return interaction.reply({
+            content: message,
+            ephemeral: true
+        });
+    }
+  
+    if (interaction.commandName === 'my_balance') {
+        const message = await functions.getUserBalance(interaction.member.user.id)
+        return interaction.reply({
+            content: message,
+            ephemeral: true
+        });
+    }
+  });
+
 client.login(process.env.TOKEN)
